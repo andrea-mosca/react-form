@@ -6,9 +6,8 @@ export default function Main() {
   const [articlesData, setArticlesData] = useState(articles);
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    setArticlesData([...articles, newArticle]);
+    setArticlesData([...articlesData, newArticle]);
     setNewArticle("");
-    console.log(articlesData);
   };
   return (
     <main>
@@ -16,13 +15,13 @@ export default function Main() {
         <div>
           <h2>articles</h2>
           <div className="list-group">
-            {articlesData.map((article, index) => (
+            {articlesData.map((articleData, index) => (
               <a
                 href="#"
                 key={index}
                 className="list-group-item list-group-item-action"
               >
-                {article}
+                {articleData}
               </a>
             ))}
           </div>
